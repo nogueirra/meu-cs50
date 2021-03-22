@@ -31,11 +31,11 @@ int main(void)
     
     float grade = basicFormula(lettersPerHundredWords, sentencesPerHundredWords);
     
-    if(grade >= 16)
+    if (grade >= 16)
     {
         printf("Grade 16+");
     }
-    else if(grade < 1)
+    else if (grade < 1)
     {
         printf("Before Grade 1");
     }
@@ -61,9 +61,9 @@ int countLetters(string text)
 {
     int letters = 0;
     
-    for(int i = 0, n = strlen(text); i < n; i++)
+    for (int i = 0, n = strlen(text); i < n; i++)
     {
-        if(text[i] >= 'A' && text[i] <= 'z' && !(text[i] >= '[' && text[i] <= '`'))
+        if (text[i] >= 'A' && text[i] <= 'z' && !(text[i] >= '[' && text[i] <= '`'))
         {
             letters++;
         }
@@ -76,9 +76,9 @@ int countWords(string text)
 {
     int words = 1;
     
-    for(int i = 0, n = strlen(text); i < n; i++)
+    for (int i = 0, n = strlen(text); i < n; i++)
     {
-        if(text[i] == ' ')
+        if (text[i] == ' ')
         {
             words++;
         }
@@ -91,9 +91,9 @@ int countSentences(string text)
 {
     int sentences = 0;
     
-    for(int i = 0, n = strlen(text); i < n; i++)
+    for (int i = 0, n = strlen(text); i < n; i++)
     {
-        if(text[i] == '.' || text[i] == '!' || text[i] == '?')
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
             sentences++;
         }
