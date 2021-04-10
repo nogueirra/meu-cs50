@@ -33,11 +33,11 @@ string encrypt(string text, string cipher)
     {
         char currentLetter = text[i];
         
-        if (currentLetter >= 'A' && currentLetter <= 'Z')
+        if (isupper(currentLetter))
         {
             text[i] = toupper(cipher[text[i] - 'A']);
         }
-        else if (currentLetter >= 'a' && currentLetter <= 'z')
+        else if (islower(currentLetter))
         {
             text[i] = tolower(cipher[text[i] - 'a']);
         }
