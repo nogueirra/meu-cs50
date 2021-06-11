@@ -57,14 +57,20 @@ int warnings(int argc, string argv[])
     int cipherLength = strlen(argv[1]);
     string cipher = argv[1];
     
-    if (cipherLength < 26 || cipherLength > 26)
+    if (cipherLength < 26)
     {
-        printf("Key must contain 26 characters.\n");
-        return 1;
+        printf("Key must contain 26 characters. Missing %i characters.\n", 26 - cipherLength);
+        return 2;
+    }
+    if(cipherLength > 26) 
+    {
+        printf("Key must contain only 26 characters. %i characters remaining.\n", cipherLength - 26);
+        return 2;
     }
     
     for (int i = 0; i < cipherLength; i++)
     {
+        // Check if every character is an alphabetic
         if (!isalpha(cipher[i]))
         {
             printf("Key must only contain alphabetic characters.\n");
